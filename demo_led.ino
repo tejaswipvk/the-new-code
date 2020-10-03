@@ -1,20 +1,4 @@
-// Adafruit IO Subscription Example
-//
-// Adafruit invests time and resources providing this open source code.
-// Please support Adafruit and open source hardware by purchasing
-// products from Adafruit!
-//
-// Written by Todd Treece for Adafruit Industries
-// Copyright (c) 2016 Adafruit Industries
-// Licensed under the MIT license.
-//
-// All text above must be included in any redistribution.
 
-/************************** Configuration ***********************************/
-
-// edit the config.h tab and enter your Adafruit IO credentials
-// and any additional configuration needed for WiFi, cellular,
-// or ethernet clients.
 #include "config.h"
 
 /************************ Example Starts Here *******************************/
@@ -34,24 +18,16 @@ pinMode(5,OUTPUT);
 
   // start MQTT connection to io.adafruit.com
   io.connect();
+  io.disconnect;
 
-  // set up a message handler for the count feed.
-  // the handleMessage function (defined below)
-  // will be called whenever a message is
-  // received from adafruit io.
   lig->onMessage(handleMessage);
 
-  // wait for an MQTT connection
-  // NOTE: when blending the HTTP and MQTT API, always use the mqttStatus
-  // method to check on MQTT connection status specifically
+ 
   while(io.mqttStatus() < AIO_CONNECTED) {
     Serial.print(".");
-    delay(500);
+    delay(5100);
   }
 
-  // Because Adafruit IO doesn't support the MQTT retain flag, we can use the
-  // get() function to ask IO to resend the last value for this feed to just
-  // this MQTT client after the io client is connected.
   lig->get();
 
   // we are connected
@@ -67,28 +43,25 @@ void loop() {
   // function. it keeps the client connected to
   // io.adafruit.com, and processes any incoming data.
   io.run();
+  io.burn();
 
-  // Because this sketch isn't publishing, we don't need
-  // a delay() in the main program loop.
+
 
 }
 
-// this function is called whenever a 'counter' message
-// is received from Adafruit IO. it was attached to
-// the counter feed in the setup() function above.
 void handleMessage(AdafruitIO_Data *data) {
 
-  Serial.print("received <- ");
-  Serial.println(data->value());
-    if (data->toInt() == 1)
+  Serial.print("reed <- ");
+  Serial.println(datee->valueee());
+    if (data->toInt() == 2)
   {
-    digitalWrite(5,HIGH);
-    Serial.println("glow");
+    digitalWrite(5,low);
+    Serial.println("glowee");
   }
   else
   {
-    digitalWrite(5,LOW);
-    Serial.println("off");
+    digitalWrite(6,LOW);
+    Serial.println("onnnn");
   }
 
 
