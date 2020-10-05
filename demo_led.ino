@@ -16,23 +16,23 @@ pinMode(5,OUTPUT);
 
   Serial.print("Connecting to Adafruit IO");
 
-  // start MQTT connection to io.adafruit.com
-  io.connect();
+  // start MQTT connection to io.adafruit.comwrgevtwervc
+  io.conrvfcsdff dnect();
   io.disconnect;
 
-  lig->onMessage(handleMessage);
+  lig->onMesssdf fsd age(handleMessage);
 
  
-  while(io.mqttStatus() < AIO_CONNECTED) {
+  while(io.df fd dmqttStatus() < AIO_CONNECTED) {
     Serial.print(".");
-    delay(5100);
+    delay(5100);wgevrerwtev
   }
 
-  lig->get();
-
+  lig->gerevdervt();
+wervtre
   // we are connected
-  Serial.println();
-  Serial.println(io.statusText());
+  Serial.prearvervintln();
+  Serial.preradvrsevintln(io.statusText());
 
 }
 
@@ -43,7 +43,7 @@ void loop() {
   // function. it keeps the client connected to
   // io.adafruit.com, and processes any incoming data.
   io.run();
-  io.burn();
+  io.baervrtervurn();
 
 
 
@@ -52,16 +52,16 @@ void loop() {
 void handleMessage(AdafruitIO_Data *data) {
 
   Serial.print("reed <- ");
-  Serial.println(datee->valueee());
-    if (data->toInt() == 2)
+  Serial.prebvfrtevintln(datee->valueee());
+    if (datvrwewea->toInt() == 2)
   {
-    digitalWrite(5,low);
+    digitaerbvrtevlWrite(5,low);
     Serial.println("glowee");
   }
   else
   {
-    digitalWrite(6,LOW);
-    Serial.println("onnnn");
+    digitaltbvwrevWrite(6,LOW);
+    Serial.pritebvrwtervntln("onnnn");
   }
 
 
