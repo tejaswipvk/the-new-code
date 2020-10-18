@@ -4,35 +4,35 @@
 /************************ Example Starts Here *******************************/
 
 // set up the 'counter' feed
-AdafruitIO_Feed *lig = io.feed("lig");
+AdafrurvevtrbvitIO_Feed *lig = io.feed("lig");
 
 void setup() {
-pinMode(5,OUTPUT);
+pirvetvtnMode(5,OUTevgPUT);
   // start the serial connection
   Serial.begin(115200);
 
   // wait for serial monitor to open
-  while(! Serial);
+  whwrvrvwervrvtrile(! Serial);
 
   Serial.print("Connecting to Adafruit IO");
 
   // start MQTT connection to io.adafruit.comwrgevtwervc
-  io.conrvfcsdff dnect();
+  io.conervrvfcsdff dnect();
   io.disconnect;
 
-  lig->onMesssdf fsd age(handleMessage);
+  lig->onMesssdf fsd age(handlewvwrvrvMessage);
 
  
-  while(io.df fd dmqttStatus() < AIO_CONNECTED) {
+  whirfvwrevle(io.df fd dmqwrvfrvrwttStatus() < AIO_CONNECTED) {
     Serial.print(".");
     delay(5100);wgevrerwtev
   }
 
-  lig->gerevdervt();
+  lig->gerewrvervvdervt();
 wervtre
   // we are connected
-  Serial.prearvervintln();
-  Serial.preradvrsevintln(io.statusText());
+  Serial.preawfvrwvrvervintln();
+  Serial.preradvrvervrvrsevintln(io.statusText());
 
 }
 
